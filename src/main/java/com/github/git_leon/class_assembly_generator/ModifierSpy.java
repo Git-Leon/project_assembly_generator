@@ -35,20 +35,22 @@ public class ModifierSpy {
         return getAbstractness().equalsIgnoreCase("abstract");
     }
 
-
-    public String getAccessibility() {
-        String modifier = modifierPresumption("private", "protected", "public");
-        return "".equals(modifier) ? "default" : modifier;
-    }
-
     public String getStaticism() {
         return modifierPresumption("static");
+    }
+
+    public String getFinalism() {
+        return modifierPresumption("final");
     }
 
     public String getAbstractness() {
         String modifier = modifierPresumption("abstract");
         return "".equals(modifier) ? "concrete" : modifier;
+    }
 
+    public String getAccessibility() {
+        String modifier = modifierPresumption("private", "protected", "public");
+        return "".equals(modifier) ? "default" : modifier;
     }
 
     private String modifierPresumption(String... strings) {
@@ -57,9 +59,5 @@ public class ModifierSpy {
                 return s;
         }
         return "";
-    }
-
-    public String getFinalism() {
-        return modifierPresumption("final");
     }
 }
