@@ -1,33 +1,42 @@
 package com.github.git_leon.class_assembly_generator;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+import java.sql.Date;
+
 /**
  * Created by leon on 9/29/17.
  */
 public class ClassDescriber {
-    private final Class<?> cls;
-    private final ModifierSpy modifiers;
+    public static String getFullDescription(Class cls) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n" + ClassDescriber.getClassSignatureDescription(cls));
 
-    public ClassDescriber(Class<?> cls) {
-        this.cls = cls;
-        this.modifiers = new ModifierSpy(cls);
-    }
-
-    public String toString() {
-        String description = "Define %s %s in the `%s` package named `%s.`";
-        return String.format(description,
-                modifiers.getAbstractness(),
-                getPrototype(),
-                cls.getPackage().getName(),
-                cls.getCanonicalName());
-    }
-
-    public String getPrototype() {
-        if(cls.isInterface()) {
-            return "interface";
-        } else if (cls.isEnum()) {
-            return "enum";
-        } else {
-            return "class";
+        for (Method m : Date.class.getDeclaredMethods()) {
+            sb.append("\n" + ClassDescriber.getMethodDescription(m));
         }
+
+        for (Field field : Date.class.getDeclaredFields()) {
+            sb.append("\n" + ClassDescriber.getFieldDescription(field));
+        }
+
+        return sb.toString();
+    }
+
+    public static String getMethodDescription(Method m) {
+        return new MethodDescriber(m).toString();
+    }
+
+    public static String getParameterDescription(Parameter... parameters) {
+        return new ParameterDescriber(parameters).toString();
+    }
+
+    public static String getClassSignatureDescription(Class<?> cls) {
+        return new ClassSignatureDescriber(cls).toString();
+    }
+
+    public static String getFieldDescription(Field f) {
+        return new FieldDescriber(f).toString();
     }
 }

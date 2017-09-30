@@ -19,6 +19,6 @@ public class MethodDescriber {
         return String.format(description,
                 method.getName(),
                 method.getGenericReturnType().getTypeName(),
-                Describer.getParameterDescription(method.getParameters()));
+                ClassDescriber.getParameterDescription(method.getParameters()));
     }
 }
