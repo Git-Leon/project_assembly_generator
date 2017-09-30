@@ -11,7 +11,7 @@ public class MethodDescriber {
 
     public MethodDescriber(Method method) {
         this.method = method;
-        this.description = new Modifiers(method).isAbstract() ? "Declare " : "Define ";
+        this.description = new ModifierSpy(method).isAbstract() ? "Declare " : "Define ";
     }
 
     public String toString() {

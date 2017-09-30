@@ -8,28 +8,26 @@ import java.lang.reflect.Parameter;
 /**
  * Created by leon on 9/29/17.
  */
-public class Modifiers {
+public class ModifierSpy {
     private final String modifiers;
-    private String staticism;
-    private String finalism;
 
-    public Modifiers(int modifiers) {
+    public ModifierSpy(int modifiers) {
         this.modifiers = Modifier.toString(modifiers);
     }
 
-    public Modifiers(Class c) {
+    public ModifierSpy(Class c) {
         this(c.getModifiers());
     }
 
-    public Modifiers(Field f) {
+    public ModifierSpy(Field f) {
         this(f.getModifiers());
     }
 
-    public Modifiers(Method m) {
+    public ModifierSpy(Method m) {
         this(m.getModifiers());
     }
 
-    public Modifiers(Parameter p) {
+    public ModifierSpy(Parameter p) {
         this(p.getModifiers());
     }
 

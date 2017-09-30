@@ -12,7 +12,7 @@ public class FieldDescriber {
         this.field = field;
     }
     public String toString() {
-        Modifiers modifiers = new Modifiers(field);
+        ModifierSpy modifiers = new ModifierSpy(field);
         String description = "declare %s %s field named `%s` of type `%s`. The field has `%s` accessibility.";
         return String.format(description,
                 modifiers.getStaticism(),

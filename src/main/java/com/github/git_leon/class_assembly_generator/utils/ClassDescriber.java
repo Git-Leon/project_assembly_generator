@@ -5,12 +5,12 @@ package com.github.git_leon.class_assembly_generator.utils;
  */
 public class ClassDescriber {
     private final Class<?> cls;
-    private final Modifiers modifiers;
+    private final ModifierSpy modifiers;
     private String description;
 
     public ClassDescriber(Class<?> cls) {
         this.cls = cls;
-        this.modifiers = new Modifiers(cls);
+        this.modifiers = new ModifierSpy(cls);
     }
 
     public String toString() {
