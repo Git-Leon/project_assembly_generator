@@ -15,7 +15,7 @@ public class MethodDescriber {
     }
 
     public String toString() {
-        description += "method named `%s`, which has a return type of `%s` and %s";
+        description += "method named `%s`, which has a return type of type `%s` and %s";
         return String.format(description,
                 method.getName(),
                 method.getGenericReturnType().getTypeName(),

@@ -11,7 +11,7 @@ import java.sql.Date;
 public class Describer {
     public static String getFullDescription(Class cls) {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n" + Describer.getClassDescription(Date.class));
+        sb.append("\n" + Describer.getClassDescription(cls));
 
         for (Method m : Date.class.getDeclaredMethods()) {
             sb.append("\n" + Describer.getMethodDescription(m));
@@ -20,6 +20,7 @@ public class Describer {
         for (Field field : Date.class.getDeclaredFields()) {
             sb.append("\n" + Describer.getFieldDescription(field));
         }
+
         return sb.toString();
     }
 

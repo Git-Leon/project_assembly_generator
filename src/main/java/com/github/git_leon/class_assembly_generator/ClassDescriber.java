@@ -6,7 +6,6 @@ package com.github.git_leon.class_assembly_generator;
 public class ClassDescriber {
     private final Class<?> cls;
     private final ModifierSpy modifiers;
-    private String description;
 
     public ClassDescriber(Class<?> cls) {
         this.cls = cls;
@@ -14,12 +13,21 @@ public class ClassDescriber {
     }
 
     public String toString() {
-        String description = "%s class in the `%s` package named `%s.`";
+        String description = "Define %s %s in the `%s` package named `%s.`";
         return String.format(description,
                 modifiers.getAbstractness(),
+                getPrototype(),
                 cls.getPackage().getName(),
                 cls.getCanonicalName());
     }
 
-
+    public String getPrototype() {
+        if(cls.isInterface()) {
+            return "interface";
+        } else if (cls.isEnum()) {
+            return "enum";
+        } else {
+            return "class";
+        }
+    }
 }
