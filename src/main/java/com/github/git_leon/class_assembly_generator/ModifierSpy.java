@@ -1,4 +1,4 @@
-package com.github.git_leon.class_assembly_generator.utils;
+package com.github.git_leon.class_assembly_generator;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.github.git_leon.class_assembly_generator.utils;
+package com.github.git_leon.class_assembly_generator;
 
 /**
  * Created by leon on 9/29/17.
