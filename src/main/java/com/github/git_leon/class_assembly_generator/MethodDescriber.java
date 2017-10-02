@@ -18,7 +18,7 @@ public class MethodDescriber {
         description += "method named `%s`, which has a return type of type `%s` and %s";
         return String.format(description,
                 method.getName(),
-                method.getGenericReturnType().getTypeName(),
+                method.getReturnType().getSimpleName(),
                 ClassDescriber.getParameterDescription(method.getParameters()));
     }
 }

@@ -18,7 +18,7 @@ public class FieldDescriber {
                 modifiers.getStaticism(),
                 modifiers.getAbstractness(),
                 field.getName(),
-                field.getType().getCanonicalName(),
+                field.getGenericType().getClass().getSimpleName(),
                 modifiers.getAccessibility());
     }
 }

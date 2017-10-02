@@ -21,7 +21,7 @@ public class ProjectDescriber {
     }
 
     public ProjectDescriber(String org_your_package) {
-        List<ClassLoader> classLoadersList = new LinkedList<ClassLoader>();
+        List<ClassLoader> classLoadersList = new LinkedList<>();
         classLoadersList.add(ClasspathHelper.contextClassLoader());
         classLoadersList.add(ClasspathHelper.staticClassLoader());
 
@@ -38,6 +38,6 @@ public class ProjectDescriber {
         for(Class c : classes) {
             sb.append("\n" + ClassDescriber.getFullDescription(c));
         }
-        return toString();
+        return sb.toString();
     }
 }

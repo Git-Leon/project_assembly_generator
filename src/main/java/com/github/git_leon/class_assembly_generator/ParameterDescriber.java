@@ -29,7 +29,6 @@ public class ParameterDescriber {
 
     @Override
     public String toString() {
-        String description = null;
         int parameterCount = parameters.length;
         for (int i = 0; i < parameterCount; i++) {
             Parameter parameter = parameters[i];

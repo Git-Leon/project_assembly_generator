@@ -13,12 +13,12 @@ public class ClassSignatureDescriber {
     }
 
     public String toString() {
-        String description = "Define %s %s in the `%s` package named `%s.`";
+        String description = "Define %s %s in the `%s` package named `%s`.";
         return String.format(description,
                 modifiers.getAbstractness(),
                 getPrototype(),
                 cls.getPackage().getName(),
-                cls.getCanonicalName());
+                cls.getSimpleName());
     }
 
     public String getPrototype() {

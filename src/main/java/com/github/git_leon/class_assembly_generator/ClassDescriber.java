@@ -13,11 +13,11 @@ public class ClassDescriber {
         StringBuilder sb = new StringBuilder();
         sb.append("\n" + ClassDescriber.getClassSignatureDescription(cls));
 
-        for (Method m : Date.class.getDeclaredMethods()) {
+        for (Method m : cls.getDeclaredMethods()) {
             sb.append("\n" + ClassDescriber.getMethodDescription(m));
         }
 
-        for (Field field : Date.class.getDeclaredFields()) {
+        for (Field field : cls.getDeclaredFields()) {
             sb.append("\n" + ClassDescriber.getFieldDescription(field));
         }
 
