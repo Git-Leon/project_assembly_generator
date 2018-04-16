@@ -30,9 +30,11 @@ public class ParameterDescriber {
     @Override
     public String toString() {
         int parameterCount = parameters.length;
+        Parameter firstParameter;
         for (int i = 0; i < parameterCount; i++) {
+            firstParameter = parameters[0];
             Parameter parameter = parameters[i];
-            if (i + 1 < parameterCount) {
+            if (parameter != firstParameter) {
                 description += ", ";
             }
             description += "`" + parameter.getType().getCanonicalName() + "`";

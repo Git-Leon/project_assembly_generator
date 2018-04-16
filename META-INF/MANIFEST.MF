@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Name: gitleon/utils/projectdetails/detaileon
+Specification-Title: "detaileon"
+Specification-Version: "1.0"
+Specification-Vendor: "Git-Leon".
+Implementation-Title: "detaileon"
+Implementation-Version: "1.0"
+Implementation-Vendor: "Git-Leon"

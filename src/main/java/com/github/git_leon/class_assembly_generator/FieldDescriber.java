@@ -13,10 +13,9 @@ public class FieldDescriber {
     }
     public String toString() {
         ModifierSpy modifiers = new ModifierSpy(field);
-        String description = "Declare %s %s field named `%s` of type `%s`. The field has `%s` accessibility.";
+        String description = "Declare %s field named `%s` of type `%s`. The field has `%s` accessibility.";
         return String.format(description,
                 modifiers.getStaticism(),
-                modifiers.getAbstractness(),
                 field.getName(),
                 field.getGenericType().getClass().getSimpleName(),
                 modifiers.getAccessibility());

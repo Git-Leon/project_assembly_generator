@@ -36,24 +36,25 @@ public class ModifierSpy {
     }
 
     public String getStaticism() {
-        return modifierPresumption("static");
+        String modifier = validateModifier("static");
+        return modifier.equals("static") ? "static" : "non-static";
     }
 
     public String getFinalism() {
-        return modifierPresumption("final");
+        return validateModifier("final");
     }
 
     public String getAbstractness() {
-        String modifier = modifierPresumption("abstract");
+        String modifier = validateModifier("abstract");
         return "".equals(modifier) ? "concrete" : modifier;
     }
 
     public String getAccessibility() {
-        String modifier = modifierPresumption("private", "protected", "public");
+        String modifier = validateModifier("private", "protected", "public");
         return "".equals(modifier) ? "default" : modifier;
     }
 
-    private String modifierPresumption(String... strings) {
+    private String validateModifier(String... strings) {
         for (String s : strings) {
             if (modifiers.contains(s))
                 return s;

@@ -10,4 +10,10 @@ public class TestProjectDescriber {
     public void testToString() {
         System.out.println(new ProjectDescriber().toString());
     }
+
+    @Test
+    public void testToString2() {
+        String topLevelPackageName = "com.github";
+        System.out.println(new ProjectDescriber(topLevelPackageName).toString());
+    }
 }
