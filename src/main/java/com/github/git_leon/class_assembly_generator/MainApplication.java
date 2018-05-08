@@ -6,11 +6,11 @@ package com.github.git_leon.class_assembly_generator;
 public class MainApplication {
     public static void main(String[] args) {
         String topLevelPackageName = args[0];
-        System.out.println(new ProjectDescriber(topLevelPackageName).toString());
-    }
+        ProjectDescriber projectDescriber = new ProjectDescriber(topLevelPackageName);
+        String projectDescription = projectDescriber.toString();
 
-    public static void demo() {
-        String topLevelPackageName = "com.github";
-        System.out.println(new ProjectDescriber(topLevelPackageName).toString());
+        String outputFilePath = "target/how_to_create_this_project.txt";
+        FileWriter fileWriter = new FileWriter(outputFilePath);
+        fileWriter.write(projectDescription);
     }
 }
