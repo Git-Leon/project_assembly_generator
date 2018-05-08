@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Name: gitleon/utils/projectassemblygenerator
+Specification-Title: "Project Assembly Generator"
+Specification-Version: "1.0"
+Specification-Vendor: "Git-Leon".
+Implementation-Title: "project-assembly-generator"
+Implementation-Version: "1.1"
+Implementation-Vendor: "Git-Leon"
