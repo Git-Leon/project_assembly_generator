@@ -40,7 +40,7 @@
 
 ```java
 public static void main(String[] args) {
-    new ReadMeGenerator("com.github").writeToReadMe();
+    new ReadMeGenerator("com.mydomain").writeToReadMe();
 }
 ```
 
