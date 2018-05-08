@@ -50,7 +50,7 @@ public class ReadMeGenerator {
     }
 
     public void writeToReadMe() {
-        FileWriter writer = new FileWriter("README.md");
+        FileWriter writer = new FileWriter("README (Generated).md");
         for (Class cls : projectDescriber.getClasses()) {
             writer.write(getFullDescription(cls));
         }
