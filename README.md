@@ -43,3 +43,11 @@ public static void main(String[] args) {
     new ReadMeGenerator("com.github").writeToReadMe();
 }
 ```
+
+
+## Sample
+* Given a sample project whose structure is as follows:<br>
+<img src = "./assets/project structure.png">
+
+* Using the 3 step process above will generate a `README.md` with content like:
+<img src = "./assets/Sample README generation.png">
