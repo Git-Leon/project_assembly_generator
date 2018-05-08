@@ -50,4 +50,4 @@ public static void main(String[] args) {
 <img src = "./assets/project structure.png">
 
 * Using the 3 step process above will generate a `README.md` with content like:
-<img src = "./assets/Sample README generation.png">
+<img src = "./assets/sample README generation.png">
