@@ -24,7 +24,7 @@ public class ClassDescriber {
     }
 
     public static String getMethodDescription(Method m) {
-        return new MethodDescriber(m).toString();
+        return "* "  + new MethodDescriber(m).toString();
     }
 
     public static String getParameterDescription(Parameter... parameters) {
@@ -32,10 +32,12 @@ public class ClassDescriber {
     }
 
     public static String getClassSignatureDescription(Class<?> cls) {
-        return new ClassSignatureDescriber(cls).toString();
+        String prototype = new ClassSignatureDescriber(cls).getPrototype();
+        String description = "# Define %s %s";
+        return "* "  + new ClassSignatureDescriber(cls).toString();
     }
 
     public static String getFieldDescription(Field f) {
-        return new FieldDescriber(f).toString();
+        return "* "  + new FieldDescriber(f).toString();
     }
 }

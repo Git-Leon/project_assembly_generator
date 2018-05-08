@@ -7,28 +7,28 @@ import java.lang.reflect.Parameter;
  */
 public class ParameterDescriber {
     private final Parameter[] parameters;
-    private String description;
+    private final String prefix;
 
     public ParameterDescriber(Parameter[] parameters) {
         this.parameters = parameters;
-        this.description = null;
-        switch (parameters.length) { // get description prefix
+        switch (parameters.length) { // get prefix prefix
             case 0:
-                description = "nullary parameters";
+                this.prefix = "nullary parameters";
                 break;
 
             case 1:
-                description = "a parameter of type ";
+                this.prefix = "a parameter of type ";
                 break;
 
             default:
-                description = "parameters of type ";
+                this.prefix = "parameters of type ";
                 break;
         }
     }
 
     @Override
     public String toString() {
+        String description = prefix;
         int parameterCount = parameters.length;
         Parameter firstParameter;
         for (int i = 0; i < parameterCount; i++) {

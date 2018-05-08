@@ -33,11 +33,14 @@ public class ProjectDescriber {
                         .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(org_your_package))));
     }
 
+    public Set<Class<?>> getClasses() {
+        return reflections.getSubTypesOf(Object.class);
+    }
+
     @Override
     public String toString() {
-        Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
         StringBuilder sb = new StringBuilder();
-        for (Class c : classes) {
+        for (Class c : getClasses()) {
             sb.append("\n" + ClassDescriber.getFullDescription(c));
         }
         return sb.toString();
